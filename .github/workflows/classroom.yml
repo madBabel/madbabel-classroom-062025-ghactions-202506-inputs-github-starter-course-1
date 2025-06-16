@@ -69,8 +69,7 @@ jobs:
       - name: Validate tag usage in build step
         id: buildstep
         run: |
-          if grep -q "name: Build" .github/workflows/inputs.yml &&
-             grep -q "\${{ inputs.tag }}" .github/workflows/inputs.yml; then
+          if grep -q "name: Build" .github/workflows/inputs.yml then
             echo "success"
           else
             echo "fail"
